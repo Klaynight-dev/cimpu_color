@@ -1,0 +1,34 @@
+{
+    "name": "cimpu-pseudo-assembler-extension",
+    "displayName": "CimPU Pseudo Assembler",
+    "description": "Extension Visual Studio Code pour la coloration syntaxique et le support de base du langage Pseudo Assembler de CimPU.",
+    "version": "0.0.1",
+    "publisher": "votre-nom-d-editeur",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "pseudo-assembler",
+                "aliases": ["Pseudo Assembler", "pseudo-assembler"],
+                "extensions": [".asm", ".txt", ".pseudo"],
+                "configuration": "./src/language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pseudo-assembler",
+                "scopeName": "source.pseudo-assembler",
+                "path": "./src/syntaxes/pseudo-assembler.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:pseudo-assembler"
+    ],
+    "main": "./src/extension.ts"
+}

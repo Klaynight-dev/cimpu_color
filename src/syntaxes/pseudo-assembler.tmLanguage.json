@@ -1,0 +1,23 @@
+{
+    "scopeName": "source.pseudo-assembler",
+    "patterns": [
+        {
+            "name": "comment.line.semicolon.pseudo-assembler",
+            "match": ";.*$"
+        },
+        {
+            "name": "keyword.control.pseudo-assembler",
+            "match": "\\b(LD|OUT|CALL|RET|HLT|IN)\\b"
+        },
+        {
+            "name": "constant.numeric.pseudo-assembler",
+            "match": "\\b\\d+\\b"
+        },
+        {
+            "name": "variable.parameter.register.pseudo-assembler",
+            "match": "\\bR[0-9]+\\b"
+        }
+    ],
+    "repository": {},
+    "scopeName": "source.pseudo-assembler"
+}
