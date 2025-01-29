@@ -1,34 +1,46 @@
 {
     "name": "cimpu-pseudo-assembler-extension",
-    "displayName": "CimPU Pseudo Assembler",
-    "description": "Extension Visual Studio Code pour la coloration syntaxique et le support de base du langage Pseudo Assembler de CimPU.",
+    "displayName": "CimPU Pseudo Assembler Extension",
+    "description": "Provides syntax highlighting and basic support for the CimPU Pseudo Assembler language.",
     "version": "0.0.1",
-    "publisher": "votre-nom-d-editeur",
+    "publisher": "your-publisher-name",
     "engines": {
-        "vscode": "^1.50.0"
+      "vscode": "^1.50.0"
     },
     "categories": [
-        "Programming Languages"
+      "Programming Languages"
     ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "pseudo-assembler",
-                "aliases": ["Pseudo Assembler", "pseudo-assembler"],
-                "extensions": [".asm", ".txt", ".pseudo"],
-                "configuration": "./src/language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "pseudo-assembler",
-                "scopeName": "source.pseudo-assembler",
-                "path": "./src/syntaxes/pseudo-assembler.tmLanguage.json"
-            }
-        ]
-    },
     "activationEvents": [
-        "onLanguage:pseudo-assembler"
+      "onLanguage:pseudo-assembler"
     ],
-    "main": "./src/extension.ts"
-}
+    "main": "./src/extension.ts",
+    "contributes": {
+      "languages": [
+        {
+          "id": "pseudo-assembler",
+          "aliases": ["Pseudo Assembler", "pseudo-assembler"],
+          "extensions": [".asm", ".txt", ".pseudo"],
+          "configuration": "./language-configuration.json"
+        }
+      ],
+      "grammars": [
+        {
+          "language": "pseudo-assembler",
+          "scopeName": "source.pseudo-assembler",
+          "path": "./syntaxes/pseudo-assembler.tmLanguage.json"
+        }
+      ]
+    },
+    "scripts": {
+      "test": "tsc -p ./ && node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/chai": "^5.0.1",
+      "@types/mocha": "^10.0.10",
+      "@types/vscode": "^1.96.0",
+      "chai": "^5.1.2",
+      "mocha": "^11.1.0",
+      "ts-node": "^10.9.2",
+      "vscode-test": "^1.6.1"
+    }
+  }
